@@ -102,8 +102,8 @@ a {
     margin: 12px auto;
     /* GNB 5색상 (Blue, Red, Cyan, Orange, Purple) 멀티 그라데이션 */
     background: linear-gradient(90deg, #0056D2, #FC3D49, #00A8FF, #FF9F43, #7B2CBF);
-    -webkit-mask: url('./ins-check/trustway.png') no-repeat center;
-    mask: url('./ins-check/trustway.png') no-repeat center;
+    -webkit-mask: url('./trustway.png') no-repeat center;
+    mask: url('./trustway.png') no-repeat center;
     -webkit-mask-size: contain;
     mask-size: contain;
 }

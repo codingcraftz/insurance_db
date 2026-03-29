@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/ins-check",
+      "destination": "/ins-check/",
+      "permanent": true
+    }
+  ]
+}
