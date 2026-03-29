@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Supabase Configuration
     const SUPABASE_URL = 'https://ylvdasijfpudqdwpsczi.supabase.co';
     const SUPABASE_ANON_KEY = 'sb_publishable_j-hzHJW7LuqXJ1PMQyzReg_SBSv103G';
@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. 스무스 스크롤
     const navLinks = document.querySelectorAll('.gnb a, .hero-onead a, .expert-cta-link');
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            if(targetId && targetId.startsWith('#')) {
+            if (targetId && targetId.startsWith('#')) {
                 const targetSection = document.querySelector(targetId);
-                if(targetSection) {
+                if (targetSection) {
                     targetSection.scrollIntoView({ behavior: 'smooth' });
                 }
             }
@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. 연락처 숫자만 입력
     const phoneInput = document.getElementById('userPhone');
-    if(phoneInput) {
-        phoneInput.addEventListener('input', function() {
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function () {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
     }
@@ -57,13 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submitBtn');
 
     if (form) {
-        form.addEventListener('submit', async function(e) {
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
-            
+
             const userName = document.getElementById('userName').value.trim();
             const userPhoneStr = phoneInput.value.trim();
             const userInterest = document.getElementById('userInterest').value;
-            
+
             if (userName.length < 2) {
                 alert('성함을 2자 이상 정확히 입력해주세요.');
                 return;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // 제출 대기 상태 표시
-            if(submitBtn) {
+            if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.innerText = '신청 처리 중...';
             }
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Network Error:', error);
                 alert('네트워크 상태가 원활하지 않습니다. 인터넷 연결을 확인해주세요.');
             } finally {
-                if(submitBtn) {
+                if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerText = '상담 신청하기';
                 }
